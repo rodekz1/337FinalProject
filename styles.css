@@ -238,18 +238,49 @@ body {
   padding: 8px 0;
 }
 
-/* Reservation Image */
+/* Reservation Layout */
+
+.reservation-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
+  align-items: start;
+  gap: 30px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.reservation-form {
+  width: 100%;
+  min-width: 0;
+}
+
+#reservationForm {
+  width: 100%;
+}
+
+.reservation-image-container {
+  width: 100%;
+  min-width: 0;
+}
 
 .reservation-image {
+  display: block;
   width: 100%;
   height: auto;
   border-radius: 8px;
   margin-top: 10px;
 }
 
-.page-content .row {
-  margin-top: 20px;
+.form-actions button {
+  white-space: nowrap;
 }
+
+@media (max-width: 767.98px) {
+  .reservation-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Footer */
 

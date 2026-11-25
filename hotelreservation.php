@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Velmont Resorts | Reservation</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 
 <body>
@@ -42,9 +42,9 @@
   <main class="container-fluid page-content">
     <h2>Reservations at Velmont Resorts</h2>
 
-    <div class="row">
+    <div class="reservation-layout">
 
-      <div class="col-md-7">
+      <div class="reservation-form">
         <form id="reservationForm" action="confirmation.php" method="get">
 
           <div class="form-row">
@@ -132,7 +132,7 @@
           <div class="form-row">
             <label for="zip">Zip Code:</label>
             <input id="zip" placeholder="12345" name="zip" type="text" inputmode="numeric"
-                   pattern="[0-9]{5}(-[0-9]{4})?" required>
+                   pattern="[0-9]{5}(-[0-9]{4})?" maxlength="5" required>
           </div>
 
           <div class="form-row">
@@ -192,21 +192,38 @@
                    maxlength="19" required>
           </div>
 
+          <div class = "form-row">
+            <label for="expd">Expiration Date:</label>
+            <input id="expd" name="expd" type="text" inputmode="numeric"
+            placeholder="12/34"
+            pattern="[0-9]{2}/[0-9]{2}"
+            maxlength="5" required>
+          </div>
+
+          <div class = "form-row">
+            <label for="cvv">CVV:</label>
+            <input id="cvv" name="cvv" type="password" inputmode="numeric"
+            placeholder="123"
+            pattern="[0-9]{3}"
+            maxlength="3" required>
+          </div>
+
           <div class="form-actions">
             <button type="submit" class="btn btn-primary">Reserve a room</button>
             <button type="reset" class="btn btn-success">Clear</button>
           </div>
 
         </form>
-      </div>
-
-      <div class="col-md-5">
-        <img src="images/resort.jpeg"
-             alt="Velmont Resorts"
-             class="img-fluid reservation-image">
-      </div>
-
     </div>
+
+      <div class="reservation-image-container">
+        <img id="hotelImage"
+             src="images/resort.jpeg"
+             alt="Velmont Resorts"
+             class="reservation-image">
+      </div>
+    </div>
+
   </main>
 
   <footer class="site-footer">
